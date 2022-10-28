@@ -1,7 +1,6 @@
 import React from "react";
-import { FormControlLabel, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import {
-  CompanyName,
   Container,
   Content,
   Label,
@@ -13,7 +12,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-import ComapnyLogo from "./logo.svg";
+import ComapnyLogo from "./logo.png";
+import BackgroundImage from "./background.jpeg";
 import "./App.css";
 import { Box } from "@mui/system";
 import { theme } from "./theme";
@@ -22,7 +22,10 @@ function App() {
   return (
     <Container
       sx={{
-        backgroundColor: "rgb(243,246,249)",
+        backgroundImage: `url(${BackgroundImage})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
         height: "100vh",
       }}
       maxWidth="xl"
@@ -36,7 +39,6 @@ function App() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            // backgroundColor: "red",
           },
         }}
       >
@@ -48,7 +50,7 @@ function App() {
             gutterBottom
             sx={{ fontSize: 45 }}
           >
-            Company Name
+            Pack & Print
           </Typography>
         </Box>
         <Box
@@ -97,7 +99,7 @@ function App() {
                 },
               }}
             >
-              comapny-name.test@hotmail.com
+              alimehdi@hotmail.com
             </Content>
           </LabelWrapper>
           <LabelWrapper
@@ -126,10 +128,10 @@ function App() {
                 },
               }}
             >
-              01/ 345 678
+              03/759 272
             </Content>
           </LabelWrapper>
-          <LabelWrapper
+          {/* <LabelWrapper
             sx={{
               [theme.breakpoints.down("sm")]: {
                 marginLeft: 0,
@@ -157,23 +159,33 @@ function App() {
             >
               Fakhreddine st, Minet el Hosn, Beirut, Lebanon
             </Content>
-          </LabelWrapper>
+          </LabelWrapper> */}
           <Box
             sx={{
               width: "25%",
               paddingTop: "20px",
               paddingLeft: "15px",
               display: "flex",
-              justifyContent: "space-around",
+              justifyContent: "start",
               [theme.breakpoints.down("sm")]: {
                 width: "100%",
-                justifyContent: "space-around",
+                justifyContent: "flex-start",
+                paddingLeft: "0px",
               },
             }}
           >
-            <FacebookIcon sx={{ cursor: "pointer" }} fontSize="large" />
-            <InstagramIcon sx={{ cursor: "pointer" }} fontSize="large" />
-            <TwitterIcon sx={{ cursor: "pointer" }} fontSize="large" />
+            {/* <FacebookIcon sx={{ cursor: "pointer" }} fontSize="large" /> */}
+            <InstagramIcon
+              sx={{ cursor: "pointer" }}
+              fontSize="large"
+              onClick={() =>
+                window.open(
+                  "https://instagram.com/pack_and_print?igshid=YmMyMTA2M2Y=",
+                  "_blank"
+                )
+              }
+            />
+            {/* <TwitterIcon sx={{ cursor: "pointer" }} fontSize="large" /> */}
           </Box>
         </Box>
       </PageContent>
